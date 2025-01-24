@@ -3,70 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+    <title>Phillip Wisniewski - QA Engineer</title>
     <style>
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f9;
+            background-color: #fafafa;
             color: #333;
-            padding-top: 120px; 
-            overflow-x: hidden; 
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #c4defe;
         }
 
         header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #65848dca;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        header h1 {
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+
+        header a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #0066cc;
+            color: #fff;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s ease;
+        }
+
+        header a:hover {
+            background-color: #5885bc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .section-content div {
+            flex: 1 1 calc(50% - 1rem);
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-content div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-content div h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-content div p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #f4f4f4;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        .modal {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
             text-align: center;
-            z-index: 1000; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        header h1 {
-            margin: 0;
+        .modal-content h2 {
+            margin-bottom: 1.5rem;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            margin-top: 50px;
-            margin-bottom: 80px;
-        }
-
-        section {
-            margin-bottom: 2rem;
-        }
-
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5rem;
+        .modal-content .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
             margin-bottom: 1rem;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .modal-content .button-container button {
+            padding: 0.8rem 1.5rem;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            flex: 1;
+            max-width: 150px;
         }
 
-        ul li {
-            margin: 0.5rem 0;
+        .modal-content .button-container button:hover {
+            background-color: #004da8;
         }
 
-        a {
-            color: #007BFF;
-            text-decoration: none;
+        .modal-content button.close {
+            display: block;
+            margin: 1rem auto 0;
+            padding: 0.8rem 1.5rem;
+            background: #ccc;
+            color: #333;
+            border-radius: 30px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .modal-content button.close:hover {
+            background: #bbb;
         }
+
         #back-to-top {
             display: none;
             position: fixed;
@@ -92,115 +225,145 @@
 <body>
     <header>
         <h1>Phillip Wisniewski</h1>
-        <p>QA Engineer</p>
+        <p>QA Engineer | 443-547-9255 | Hickory, North Carolina</p>
+        <a href="#" onclick="openModal()">Contact Me</a>
     </header>
+    
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <h2>Let's talk!</h2>
+            <div class="button-container">
+                <button onclick="window.location.href='mailto:pprints12@gmail.com'">Email Me</button>
+                <button onclick="window.open('https://www.linkedin.com/in/phillip-wisniewski-9472aa224', '_blank')">LinkedIn</button>
+                <button onclick="window.open('https://github.com/phillsatellite', '_blank')">GitHub</button>
+            </div>
+            <button class="close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Open the modal
+        function openModal() {
+            document.getElementById('contact-modal').style.display = 'flex';
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById('contact-modal').style.display = 'none';
+        }
+    </script>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script>
+    
+     const backToTopButton = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > window.innerHeight / 2) {
+             backToTopButton.style.display = "block";
+         } else {
+                backToTopButton.style.display = "none";
+            }
+     });
+
+    
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+             top: 0,
+               behavior: "smooth"
+         });
+     });
+    </script>
 
     <div class="container">
-        <section>
+        <div class="section">
             <h2>About Me</h2>
-            <p>Hi, I'm a QA Engineer who's all about details, organization, and delivering quality. I've worked with amazing teams from around the world, 
-                solving problems and ensuring things run smoothly. I keep projects on track by creating thorough test cases and maintaining an organized backlog 
-                ensuring issues are being resolved in a timely manner.  </p>
-        </section>
+            <div class="section-content">
+                <div>
+                    <h3>Who I Am</h3>
+                    <p>Hi, I'm a QA Engineer who's all about details, organization, and delivering quality. I've worked with amazing teams from around the world, 
+                        solving problems and ensuring things run smoothly. I keep projects on track by creating thorough test cases and maintaining an organized backlog 
+                        ensuring issues are being resolved in a timely manner.</p>
+                </div>
+            </div>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Experience</h2>
-            <ul>
-                <li>
-                    <strong>QA Engineer</strong> - Satellite.im (June 2021 - Present)
+            <div class="section-content">
+                <div>
+                    <h3>QA Engineer - Satellite.im</h3>
+                    <p>June 2021 - Present</p>
                     <p>In this role, I've worked with co-workers all around the globe testing a peer to peer chat app built in Web3, Java, Rust, and Flutter environments 
                         across Android, iOS, MacOS, Windows, and Linux ensuring that the product meets the highest standard possible across all of these platforms. 
                         I've used Jira, Github, XCode, and AndroidStudio to track bugs, document test cases, test and review pull requests, and collaborate effectively with developers 
-                        and stakeholders to ensure the deadlines are being met. I've also been able to start learning Cypress Automation to better track bugs as well. </p>
-                </li>
-                <li>
-                    <strong>Shift Lead</strong> - Wawa (August 2015 - June 2021)
+                        and stakeholders to ensure the deadlines are being met. I've also been able to start learning Cypress Automation to better track bugs as well.</p>
+               
+                    <h3>Shift Lead - Wawa</h3>
+                    <p>August 2015 - June 2021</p>
                     <p>As a shift lead at Wawa I was in charge of day to day operations. I would assign my team members to their stations for the day and plan out the break schedule. 
                         Followed by that I would do a code check ensuring the product had not exceeded its expiration date. During the afternoon I would assist with completing the order 
                         for the truck ensuring any product we are low on we restocked. When both the main order (included food for deli and shelf stock) and the dairy order 
                         (milk and other drinks for the coldbox) I would unload and organize them accordingly making sure the newest product is in the back. I would also assist at other 
                         stations throughout the day as needed. This job required strong organizational skills, attention to detail, and the ability to lead by example.</p>
-                </li>
-            </ul>
-        </section>
+                </div>
+            </div>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Education</h2>
-            <ul>
-                <li>
-                    <strong>High School</strong> - Manchester Valley High School (2014)
-                </li>
-            </ul>
-        </section>
+            <div class="section-content">
+                <div>
+                    <h3>High School</h3>
+                    <p>Manchester Valley High School</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Recommendations</h2>
+                <div class="section-content">
+                    <div>
+                        <h3>Luis Cardeña - QA Engineer - <a href="mailto:luis.cardena@outlook.com">Send email</a> - <a href="https://www.linkedin.com/in/luiscardenamaldonado/" target="_blank">LinkedIn</a></h3>
+                            <p><i>"I've had the pleasure of working with Phil since February 2022, and he's been an incredible asset to our team as a QA Analyst. He's skilled in manual testing for web, mobile, 
+                                and desktop applications, especially in Web3, Rust, and Flutter environments. Phil works seamlessly with other devs and stakeholders, ensuring our products are not just functional 
+                                but also user-friendly. He's thorough in reviewing code changes, documenting test plans, and expanding testing coverage, always with a focus on quality and clarity. 
+                                He is always giving the extra mile and going ahead on the QA team and also always eager to learn new technologies."</i></p>
+                   
+                        <h3>Lucas Marchi - Sr Developer</strong> - <a href="mailto:lucasgmarchi@gmail.com">Send email</a> - <a href="https://www.linkedin.com/in/lgmarchi/" target="_blank">LinkedIn</a></h3>
+                            <p><i>"I start saying Phill is a professional any company would like to have. Extremely professional in testing, having gone through experiences with tests in mobile applications in Flutter and Rust, desktop applications in Rust, besides having tested Web applications as well. He's very detail-looking, and he can see things no one else would see. 
+                                Very proactive, and always ready to help find and fix a problem, and of course, he is wonderfully friendly and nice person to be close. Everyone likes Phill, it couldn't have had another QA to work with me, 
+                                very grateful for all the support and hard work you've been doing my great friend. It has been a pleasure work with you!"</i></p>
 
-        <section>
-            <h2>Recommendations</h2>
-            <ul>
-                <li> 
-                <strong>Luis Cardeña - QA Engineer </strong> - <a href="mailto:luis.cardena@outlook.com">Send email</a> - <a href="https://www.linkedin.com/in/luiscardenamaldonado/" target="_blank">LinkedIn</a>
-                       <p> <i>"I've had the pleasure of working with Phil since February 2022, and he’s been an incredible asset to our team as a QA Analyst. He's skilled in manual testing for web, mobile, 
-                        and desktop applications, especially in Web3, Rust, and Flutter environments. Phil works seamlessly with other devs and stakeholders, ensuring our products are not just functional 
-                        but also user-friendly. He's thorough in reviewing code changes, documenting test plans, and expanding testing coverage, always with a focus on quality and clarity. 
-                        He is always giving the extra mile and going ahead on the QA team and also always eager to learn new technologies."</i></p>
-                </li>
-                <li> 
-                    <strong>Lucas Marchi - Sr Developer</strong> - <a href="mailto:lucasgmarchi@gmail.com">Send email</a> - <a href="https://www.linkedin.com/in/lgmarchi/" target="_blank">LinkedIn</a>
-                       <p> <i>"I start saying Phill is a professional any company would like to have. Extremely professional in testing, having gone through experiences with tests in mobile applications in Flutter and Rust, desktop applications in Rust, besides having tested Web applications as well. He's very detail-looking, and he can see things no one else would see. 
-                        Very proactive, and always ready to help find and fix a problem, and of course, he is wonderfully friendly and nice person to be close. Everyone likes Phill, it couldn't have had another QA to work with me, 
-                        very grateful for all the support and hard work you've been doing my great friend. It has been a pleasure work with you!"
-                        </p>
-                </li>
-                <li>
-                    <strong>Sara T. - Engineering Manager</strong> - <a href="https://www.linkedin.com/in/sara-t-3545a0126/" target="_blank">LinkedIn</a>
-                        <p><i>"I highly recommend Phil as a team mate. He is extremely dedicated and hard working, and always puts in the extra effort to ensure that the team's goals are met. His testing skills are top-notch, 
-                        and he has a great attention to detail which ensures that no issues go undetected. In addition to his technical skills, Phil is a great team player. He is always willing to lend a helping hand and is a pleasure to work with. 
-                        He is reliable and dependable, and I would highly recommend him for any project. Overall, Phil is an invaluable asset to any team and I am confident that he will continue to excel and thrive in any role he takes on."</i></p>
-                </li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>Manual Testing such as Functional Testing, Regression Testing, Exploratory Testing, Negative Testing, User Acceptance Testing (UAT)</li>
-                <li>Testing Documentation - <a href="https://docs.google.com/spreadsheets/d/1PrWjtDSGuJbrBYj44YBl97LwZv4UxEJrXjRzwLHFzYQ/edit?usp=sharing" target="_blank">See my work!</a></li>
-                <li>Bug Tracking & Reporting</li>
-                <li>SDLC</li>
-                <li>JIRA, Github, Git</li>
-                <li>Cypress</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:pprints12@gmail.com">pprints12@gmail.com</a></p>
-            <p>Phone: (443) 547-9255</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/phillip-wisniewski-9472aa224" target="_blank">https://www.linkedin.com/in/phillip-wisniewski-9472aa224</a></p>
-            <p>Github: <a href="https://github.com/phillsatellite" target="_blank">https://github.com/phillsatellite</a></p>
-        </section>
+                        <h3>Sara T. - Engineering Manager - <a href="https://www.linkedin.com/in/sara-t-3545a0126/" target="_blank">LinkedIn</a></h3>
+                            <p><i>"I highly recommend Phil as a team mate. He is extremely dedicated and hard working, and always puts in the extra effort to ensure that the team's goals are met. His testing skills are top-notch, 
+                                and he has a great attention to detail which ensures that no issues go undetected. In addition to his technical skills, Phil is a great team player. He is always willing to lend a helping hand and is a pleasure to work with. 
+                                He is reliable and dependable, and I would highly recommend him for any project. Overall, Phil is an invaluable asset to any team and I am confident that he will continue to excel and thrive in any role he takes on."</i></p>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Skills</h2>
+                    <div class="section-content">
+                        <div>
+                            <li>Manual Testing such as Functional Testing, Regression Testing, Exploratory Testing, Negative Testing, User Acceptance Testing (UAT)</li>
+                            <li>Testing Documentation - <a href="https://docs.google.com/spreadsheets/d/1PrWjtDSGuJbrBYj44YBl97LwZv4UxEJrXjRzwLHFzYQ/edit?usp=sharing" target="_blank">See my work!</a></li>
+                            <li>Bug Tracking & Reporting</li>
+                            <li>SDLC</li>
+                            <li>JIRA, Github, Git</li>
+                            <li>Cypress</li>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Contact Me</h2>
+                    <div class="section-content">
+                        <div>
+                            <p>Email: <a href="mailto:pprints12@gmail.com">pprints12@gmail.com</a></p>
+                            <p>Phone: (443) 547-9255</p>
+                            <p>LinkedIn: <a href="https://www.linkedin.com/in/phillip-wisniewski-9472aa224" target="_blank">https://www.linkedin.com/in/phillip-wisniewski-9472aa224</a></p>
+                            <p>Github: <a href="https://github.com/phillsatellite" target="_blank">https://github.com/phillsatellite</a></p>
+                        </div>
+                    </div>
+                </div>
     </div>
-
-    <button id="back-to-top" title="Back to Top">↑</button>
-
-    <script>
-        
-        const backToTopButton = document.getElementById("back-to-top");
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > window.innerHeight / 2) {
-                backToTopButton.style.display = "block";
-            } else {
-                backToTopButton.style.display = "none";
-            }
-        });
-
-        
-        backToTopButton.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-    </script>
 </body>
 </html>
