@@ -12,47 +12,69 @@
             line-height: 1.6;
             background-color: #f4f4f9;
             color: #333;
+            padding-top: 120px; /* Add padding to the top to avoid content being hidden behind the fixed header */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
+
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             background: #333;
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            z-index: 1000; /* Ensure the header stays above the content */
         }
+
         header h1 {
             margin: 0;
         }
+
         .container {
             max-width: 800px;
-            margin: 2rem auto;
+            margin: 0 auto;
             padding: 0 1rem;
+            margin-top: 50px;
+            margin-bottom: 80px;
         }
+
         section {
             margin-bottom: 2rem;
         }
+
         h2 {
             border-bottom: 2px solid #333;
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         ul li {
             margin: 0.5rem 0;
         }
+
         footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             text-align: center;
             padding: 1rem 0;
             background: #333;
             color: #fff;
-            margin-top: 2rem;
         }
+
         a {
             color: #007BFF;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
