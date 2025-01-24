@@ -12,8 +12,8 @@
             line-height: 1.6;
             background-color: #f4f4f9;
             color: #333;
-            padding-top: 120px; /* Add padding to the top to avoid content being hidden behind the fixed header */
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            padding-top: 120px; 
+            overflow-x: hidden; 
         }
 
         header {
@@ -25,7 +25,7 @@
             color: #fff;
             padding: 1rem 0;
             text-align: center;
-            z-index: 1000; /* Ensure the header stays above the content */
+            z-index: 1000; 
         }
 
         header h1 {
@@ -67,6 +67,26 @@
         a:hover {
             text-decoration: underline;
         }
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
@@ -88,7 +108,7 @@
             <ul>
                 <li>
                     <strong>QA Engineer</strong> - Satellite.im (June 2021 - Present)
-                    <p>In this role, I've worked with co-workers all around the globe testing a peer to peer chat app built in Web3, Java, Rust, Svelte, and Flutter environments 
+                    <p>In this role, I've worked with co-workers all around the globe testing a peer to peer chat app built in Web3, Java, Rust, and Flutter environments 
                         across Android, iOS, MacOS, Windows, and Linux ensuring that the product meets the highest standard possible across all of these platforms. 
                         I've used Jira, Github, XCode, and AndroidStudio to track bugs, document test cases, test and review pull requests, and collaborate effectively with developers 
                         and stakeholders to ensure the deadlines are being met. I've also been able to start learning Cypress Automation to better track bugs as well. </p>
@@ -117,21 +137,21 @@
             <h2>Feedback</h2>
             <ul>
                 <li> 
-                <strong>Luis Cardeña</strong> - <a href="mailto:luis.cardena@outlook.com">Send email</a> - <a href="https://www.linkedin.com/in/luiscardenamaldonado" target="_blank">LinkedIn</a>
+                <strong>Co-Worker</strong> - Satellite.im
                        <p> I’ve had the pleasure of working with Phil since February 2022, and he’s been an incredible asset to our team as a QA Analyst. He’s skilled in manual testing for web, mobile, 
                         and desktop applications, especially in Web3, Rust, and Flutter environments. Phil works seamlessly with other devs and stakeholders, ensuring our products are not just functional 
                         but also user-friendly. He’s thorough in reviewing code changes, documenting test plans, and expanding testing coverage, always with a focus on quality and clarity. 
                         He is always giving the extra mile and going ahead on the QA team and also always eager to learn new technologies.</p>
                 </li>
                 <li> 
-                    <strong>Lucas Marchi</strong> - <a href="mailto:lucasgmarchi@gmail.com">Send email</a> - <a href="https://www.linkedin.com/in/lgmarchi/" target="_blank">LinkedIn</a>
+                    <strong>Co-Worker</strong> - Satellite.im  
                        <p> I start saying Phill is a professional any company would like to have. Extremely professional in testing, having gone through experiences with tests in mobile applications in Flutter and Rust, desktop applications in Rust, besides having tested Web applications as well. He's very detail-looking, and he can see things no one else would see. 
                         Very proactive, and always ready to help find and fix a problem, and of course, he is wonderfully friendly and nice person to be close. Everyone likes Phill, it couldn't have had another QA to work with me, 
                         very grateful for all the support and hard work you've been doing my great friend. It has been a pleasure work with you!
                         </p>
                 </li>
                 <li>
-                    <strong>Sara T.</strong> - <a href="https://www.linkedin.com/in/sara-t-3545a0126/" target="_blank">LinkedIn</a>
+                    <strong>Manager</strong> - Satellite.im
                         <p> I highly recommend Phil as a team mate. He is extremely dedicated and hard working, and always puts in the extra effort to ensure that the team's goals are met. His testing skills are top-notch, 
                         and he has a great attention to detail which ensures that no issues go undetected. In addition to his technical skills, Phil is a great team player. He is always willing to lend a helping hand and is a pleasure to work with. 
                         He is reliable and dependable, and I would highly recommend him for any project. Overall, Phil is an invaluable asset to any team and I am confident that he will continue to excel and thrive in any role he takes on.</p>
@@ -159,5 +179,28 @@
             <p>Github: <a href="https://github.com/phillsatellite" target="_blank">https://github.com/phillsatellite</a></p>
         </section>
     </div>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script>
+        
+        const backToTopButton = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > window.innerHeight / 2) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        });
+
+        
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
 </body>
 </html>
