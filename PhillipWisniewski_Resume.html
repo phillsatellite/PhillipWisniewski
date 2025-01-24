@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phillip Wisniewski - QA Engineer</title>
     <style>
-        /* Global Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -45,6 +44,15 @@
             color: #c4defe;
         }
 
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #fff; /* Optional: Add a border */
+            object-fit: cover; /* Ensures the image fits well */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+        }
+
         header {
             display: flex;
             flex-direction: column;
@@ -62,7 +70,7 @@
 
         header p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             color: #ffffff;
         }
 
@@ -224,19 +232,22 @@
 </head>
 <body>
     <header>
-        <h1>Phillip Wisniewski</h1>
-        <p>QA Engineer | 443-547-9255 | Hickory, North Carolina</p>
-        <a href="#" onclick="openModal()">Contact Me</a>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; text-align: center;">
+            <img src="profilePic/me.jpeg" alt="Phillip Wisniewski" class="profile-pic">
+                <h1>Phillip Wisniewski</h1>
+                    <p>QA Engineer | 443-547-9255 | Hickory, North Carolina</p>
+                    <a href="#" onclick="openModal()">Contact Me</a>
+        </div>
     </header>
     
     <div id="contact-modal" class="modal">
         <div class="modal-content">
             <h2>Let's talk!</h2>
-                <div class="button-container">
-                    <button onclick="window.location.href='mailto:pprints12@gmail.com'">Email Me</button>
-                    <button onclick="window.open('https://www.linkedin.com/in/phillip-wisniewski-9472aa224', '_blank')">LinkedIn</button>
-                    <button onclick="window.open('https://github.com/phillsatellite', '_blank')">GitHub</button>
-                </div>
+            <div class="button-container">
+                <button onclick="window.location.href='mailto:pprints12@gmail.com'">Email Me</button>
+                <button onclick="window.open('https://www.linkedin.com/in/phillip-wisniewski-9472aa224', '_blank')">LinkedIn</button>
+                <button onclick="window.open('https://github.com/phillsatellite', '_blank')">GitHub</button>
+            </div>
             <button class="close" onclick="closeModal()">Close</button>
         </div>
     </div>
@@ -256,6 +267,7 @@
     <button id="back-to-top" title="Back to Top">↑</button>
 
     <script>
+    
      const backToTopButton = document.getElementById("back-to-top");
 
         window.addEventListener("scroll", () => {
@@ -266,6 +278,7 @@
             }
      });
 
+    
         backToTopButton.addEventListener("click", () => {
             window.scrollTo({
              top: 0,
@@ -277,36 +290,36 @@
     <div class="container">
         <div class="section">
             <h2>About Me</h2>
-                <div class="section-content">
-                    <div>
-                        <h3>Who I Am</h3>
-                            <p>Hi, I'm a QA Engineer who's all about details, organization, and delivering quality. I've worked with amazing teams from around the world, 
-                            solving problems and ensuring things run smoothly. I keep projects on track by creating thorough test cases and maintaining an organized backlog 
-                            ensuring issues are being resolved in a timely manner.</p>
-                    </div>
+            <div class="section-content">
+                <div>
+                    <h3>Who I Am</h3>
+                    <p>Hi, I'm a QA Engineer who's all about details, organization, and delivering quality. I've worked with amazing teams from around the world, 
+                        solving problems and ensuring things run smoothly. I keep projects on track by creating thorough test cases and maintaining an organized backlog 
+                        ensuring issues are being resolved in a timely manner.</p>
                 </div>
-         </div>
+            </div>
+        </div>
 
         <div class="section">
             <h2>Experience</h2>
-                <div class="section-content">
-                    <div>
-                        <h3>QA Engineer - Satellite.im</h3>
-                            <p>June 2021 - Present</p>
-                            <p>In this role, I've worked with co-workers all around the globe testing a peer to peer chat app built in Web3, Java, Rust, and Flutter environments 
-                             across Android, iOS, MacOS, Windows, and Linux ensuring that the product meets the highest standard possible across all of these platforms. 
-                             I've used Jira, Github, XCode, and AndroidStudio to track bugs, document test cases, test and review pull requests, and collaborate effectively with developers 
-                             and stakeholders to ensure the deadlines are being met. I've also been able to start learning Cypress Automation to better track bugs as well.</p>
+            <div class="section-content">
+                <div>
+                    <h3>QA Engineer - Satellite.im</h3>
+                    <p>June 2021 - Present</p>
+                    <p>In this role, I've worked with co-workers all around the globe testing a peer to peer chat app built in Web3, Java, Rust, and Flutter environments 
+                        across Android, iOS, MacOS, Windows, and Linux ensuring that the product meets the highest standard possible across all of these platforms. 
+                        I've used Jira, Github, XCode, and AndroidStudio to track bugs, document test cases, test and review pull requests, and collaborate effectively with developers 
+                        and stakeholders to ensure the deadlines are being met. I've also been able to start learning Cypress Automation to better track bugs as well.</p>
                
-                        <h3>Shift Lead - Wawa</h3>
-                            <p>August 2015 - June 2021</p>
-                            <p>As a shift lead at Wawa I was in charge of day to day operations. I would assign my team members to their stations for the day and plan out the break schedule. 
-                            Followed by that I would do a code check ensuring the product had not exceeded its expiration date. During the afternoon I would assist with completing the order 
-                            for the truck ensuring any product we are low on we restocked. When both the main order (included food for deli and shelf stock) and the dairy order 
-                            (milk and other drinks for the coldbox) I would unload and organize them accordingly making sure the newest product is in the back. I would also assist at other 
-                            stations throughout the day as needed. This job required strong organizational skills, attention to detail, and the ability to lead by example.</p>
-                    </div>
+                    <h3>Shift Lead - Wawa</h3>
+                    <p>August 2015 - June 2021</p>
+                    <p>As a shift lead at Wawa I was in charge of day to day operations. I would assign my team members to their stations for the day and plan out the break schedule. 
+                        Followed by that I would do a code check ensuring the product had not exceeded its expiration date. During the afternoon I would assist with completing the order 
+                        for the truck ensuring any product we are low on we restocked. When both the main order (included food for deli and shelf stock) and the dairy order 
+                        (milk and other drinks for the coldbox) I would unload and organize them accordingly making sure the newest product is in the back. I would also assist at other 
+                        stations throughout the day as needed. This job required strong organizational skills, attention to detail, and the ability to lead by example.</p>
                 </div>
+            </div>
         </div>
 
         <div class="section">
@@ -314,7 +327,7 @@
                 <div class="section-content">
                     <div>
                         <h3>High School</h3>
-                            <p>Manchester Valley High School</p>
+                        <p>Manchester Valley High School</p>
                     </div>
                 </div>
             <div class="section">
@@ -350,8 +363,8 @@
                                 <li>Cypress</li>
                             </div>
                         </div>
-                </div>
-                <div class="section">
+                    </div>
+                 <div class="section">
                     <h2>Contact Me</h2>
                         <div class="section-content">
                             <div>
@@ -362,6 +375,6 @@
                             </div>
                         </div>
                 </div>
-        </div>
+    </div>
 </body>
 </html>
