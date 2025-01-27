@@ -29,15 +29,10 @@ describe(`Home Page Tests`, () => {
       .and(`contain.text`, `Contact Me`);
     })
 
-    //These tests focus on the Contact Me modal on the landing page
+    //These tests focus on the Contact Me modal and validates content inside
     it(`Should open and verify contact modal`, () => {
       cy.openModal()
-      .should(`be.visible`)
-      .and(`contain.text`, `Let's talk!`);
-    })
-
-    it(`Validates all 3 buttons appear`, () => {
-      cy.openModal()
+      .should(`contain.text`, `Let's talk!`).and(`be.visible`)
       cy.get(`#emailButton`).should(`be.visible`).and(`contain.text`, `Email Me`)
       cy.get(`#linkedInButton`).should(`be.visible`).and(`contain.text`, `LinkedIn`)
       cy.get(`#githubButton`).should(`be.visible`).and(`contain.text`, `Github`);
