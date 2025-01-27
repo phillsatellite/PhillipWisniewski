@@ -2,7 +2,7 @@
 
 describe(`Home Page Tests`, () => {
   beforeEach(() => {
-    cy.visit(`https://phillsatellite.github.io/PhillipWisniewski/PhillipWisniewski_Resume#`);
+    cy.visit(`/`);
   });
 
     //These tests focus on everything on the landing page
