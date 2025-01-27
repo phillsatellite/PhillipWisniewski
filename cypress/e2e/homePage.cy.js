@@ -6,7 +6,7 @@ describe(`Home Page Tests`, () => {
   });
 
     //These tests focus on everything on the landing page
-    it(`Name should be displayed corrently`, () => {
+    it(`Name should be displayed correctly`, () => {
       cy.get(`h1`)
       .should(`be.visible`)
       .and(`contain`, `Phillip Wisniewski`);
