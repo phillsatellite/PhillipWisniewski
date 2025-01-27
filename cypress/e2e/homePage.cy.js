@@ -6,13 +6,13 @@ describe(`Home Page Tests`, () => {
   });
 
     //These tests focus on everything on the landing page
-    it(`should display the name Phillip Wisniewski`, () => {
+    it(`Name should be displayed corrently`, () => {
       cy.get(`h1`)
       .should(`be.visible`)
       .and(`contain`, `Phillip Wisniewski`);
     })
 
-    it(`should display the job title and location`, () => {
+    it(`Text should display the job title and location`, () => {
       cy.get(`[data-cy=info]`)
       .should(`be.visible`)
       .and(`contain`, `QA Engineer | Hickory, North Carolina`);
@@ -36,8 +36,41 @@ describe(`Home Page Tests`, () => {
       .and(`contain.text`, `Let's talk!`);
     })
 
-    it(`All 3 buttons appear`, () => {
+    it(`Validates all 3 buttons appear`, () => {
       cy.openModal()
-      cy.get(`#emailButton`).should(`be.visible`).and(`contain.text`, `Email Me`);
+      cy.get(`#emailButton`).should(`be.visible`).and(`contain.text`, `Email Me`)
+      cy.get(`#linkedInButton`).should(`be.visible`).and(`contain.text`, `LinkedIn`)
+      cy.get(`#githubButton`).should(`be.visible`).and(`contain.text`, `Github`);
+    })
+
+    //This clicks the LinkedIn button and validates the link is correct
+    it('LinkedIn button should open the correct LinkedIn profile', () => {
+      cy.window().then((win) => {
+      cy.stub(win, 'open').as('windowOpen')
+    })
+      
+      cy.openModal()
+      cy.get('#linkedInButton').click();
+
+      cy.get('@windowOpen').should('have.been.calledWith', 'https://www.linkedin.com/in/phillip-wisniewski-9472aa224');
+    })
+
+    //This clicks the Github button and validates the link is correct
+    it('Github button should open the correct Github profile', () => {
+      cy.window().then((win) => {
+      cy.stub(win, 'open').as('windowOpen')
+    })
+      
+      cy.openModal()
+      cy.get('#githubButton').click();
+
+      cy.get('@windowOpen').should('have.been.calledWith', 'https://github.com/phillsatellite');
+    })
+
+    it(`Clicks and validates the close button`, () => {
+      cy.openModal()
+      cy.get(`.close`)
+      .should(`be.visible`)
+      .click();
     })
   })
