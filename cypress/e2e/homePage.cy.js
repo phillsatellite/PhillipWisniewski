@@ -32,7 +32,7 @@ describe(`Home Page Tests`, () => {
     //These tests focus on the Contact Me modal and validates content inside
     it(`Should open and verify contact modal`, () => {
       cy.openModal()
-      .should(`contain.text`, `Let's talk!`).and(`be.visible`)
+      cy.get(`[data-cy=contactHeader]`).should(`be.visible`).and(`contain.text`, `Let's talk!`)
       cy.get(`#emailButton`).should(`be.visible`).and(`contain.text`, `Email Me`)
       cy.get(`#linkedInButton`).should(`be.visible`).and(`contain.text`, `LinkedIn`)
       cy.get(`#githubButton`).should(`be.visible`).and(`contain.text`, `Github`);
