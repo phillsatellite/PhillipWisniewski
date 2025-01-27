@@ -236,7 +236,7 @@
             <img src="profilePic/me.jpeg" alt="Phillip Wisniewski" class="profile-pic">
                 <h1>Phillip Wisniewski</h1>
                     <p data-cy="info">QA Engineer | Hickory, North Carolina</p>
-                    <a href="#" onclick="openModal()">Contact Me</a>
+                    <a data-cy="me" href="#" onclick="openModal()">Contact Me</a>
         </div>
     </header>
     
@@ -245,8 +245,8 @@
             <h2>Let's talk!</h2>
             <div class="button-container">
                 <button id="emailButton" onclick="window.location.href='mailto:pprints12@gmail.com'">Email Me</button>
-                <button onclick="window.open('https://www.linkedin.com/in/phillip-wisniewski-9472aa224', '_blank')">LinkedIn</button>
-                <button onclick="window.open('https://github.com/phillsatellite', '_blank')">GitHub</button>
+                <button id="linkedInButton" onclick="window.open('https://www.linkedin.com/in/phillip-wisniewski-9472aa224', '_blank')">LinkedIn</button>
+                <button id="githubButton" onclick="window.open('https://github.com/phillsatellite', '_blank')">Github</button>
             </div>
             <button class="close" onclick="closeModal()">Close</button>
         </div>
