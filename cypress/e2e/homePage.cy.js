@@ -1,14 +1,17 @@
 describe(`Home Page Tests`, () => {
   beforeEach(() => {
-    cy.visit(`https://phillsatellite.github.io/PhillipWisniewski/PhillipWisniewski_Resume#`);
+    cy.visit(`https://phillsatellite.github.io/PhillipWisniewski/PhillipWisniewski_Resume`);
   });
 
-  it(`Should display the name `, () => {
-    cy.get(`h1`).should(`be.visible`);
-    cy.contains(`Phillip Wisniewski`);
-  });
+    it(`should display the name Phillip Wisniewski`, () => {
+      cy.get(`h1`)
+      .should(`be.visible`)
+      .should(`contain`, `Phillip Wisniewski`);
+    })
 
-  it(`Should display title, number, and location`, () => {
-    cy.contains(`QA Engineer | 443-547-9255 | Hickory, North Carolina`).should(`be.visible`);
+    it(`should display the job title and location`, () => {
+      cy.get(`[data-cy="info"]`)
+      .should(`be.visible`)
+      .should(`contain`, `QA Engineer | Hickory, North Carolina`);
+    })
   })
-});
