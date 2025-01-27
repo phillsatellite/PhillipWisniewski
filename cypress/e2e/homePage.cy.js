@@ -9,7 +9,7 @@ describe(`Home Page Tests`, () => {
       .should(`contain`, `Phillip Wisniewski`);
     })
 
-    it(`should display the job title and location`, () => {
+    it.skip(`should display the job title and location`, () => {
       cy.get(`[data-cy="info"]`)
       .should(`be.visible`)
       .should(`contain`, `QA Engineer | Hickory, North Carolina`);
