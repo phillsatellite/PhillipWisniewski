@@ -24,7 +24,7 @@ describe(`Home Page Tests`, () => {
     })
 
     it(`Validates Contact Me button appears`, () => {
-      cy.get('{data-cy=contactMeButton]')
+      cy.get('[data-cy=contactMeButton]')
       .should(`be.visible`)
       .and(`contain.text`, `Contact Me`);
     })
