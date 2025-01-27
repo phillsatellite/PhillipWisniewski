@@ -3,19 +3,17 @@ name: Cypress Tests
 on:
   pull_request:
     branches:
-      - main  
-    paths:
-      - '**/*' 
+      - main   
 
 jobs:
   cypress-run:
     runs-on: macos-latest  
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: 'v23.4.0'  
 
@@ -24,5 +22,4 @@ jobs:
           npm install
 
       - name: Run Cypress tests
-        run: |
-          npx cypress run  # Runs Cypress tests
+          npx cypress run  
