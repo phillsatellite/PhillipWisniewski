@@ -31,7 +31,7 @@
 
         p {
             font-size: 1.1rem;
-            color: #666;
+            color: #ffffff;
         }
 
         a {
@@ -235,7 +235,7 @@
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; text-align: center;">
             <img src="profilePic/me.jpeg" alt="Phillip Wisniewski" class="profile-pic">
                 <h1>Phillip Wisniewski</h1>
-                    <p>QA Engineer | Hickory, North Carolina</p>
+                    <p data-cy="info">QA Engineer | Hickory, North Carolina</p>
                     <a href="#" onclick="openModal()">Contact Me</a>
         </div>
     </header>
@@ -244,7 +244,7 @@
         <div class="modal-content">
             <h2>Let's talk!</h2>
             <div class="button-container">
-                <button onclick="window.location.href='mailto:pprints12@gmail.com'">Email Me</button>
+                <button id="emailButton" onclick="window.location.href='mailto:pprints12@gmail.com'">Email Me</button>
                 <button onclick="window.open('https://www.linkedin.com/in/phillip-wisniewski-9472aa224', '_blank')">LinkedIn</button>
                 <button onclick="window.open('https://github.com/phillsatellite', '_blank')">GitHub</button>
             </div>
