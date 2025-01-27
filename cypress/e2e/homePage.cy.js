@@ -65,7 +65,7 @@ describe(`Home Page Tests`, () => {
     it(`Clicks and validates the close button`, () => {
       cy.openModal()
       cy.get(`.close`)
-      .should(`be.visible`)
+      .should(`be.visible`).and(`contain.text`, `Close`)
       .click();
     })
   })
