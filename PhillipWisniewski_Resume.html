@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #2a292929;
+            background-color: #ffffff29;
             color: #333;
             line-height: 1.6;
         }
@@ -62,6 +62,7 @@
             background: linear-gradient(to bottom, #65848d, #000000);
             text-align: center;
             padding: 6rem;
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 1);
         }
 
         header h1 {
@@ -109,16 +110,16 @@
 
         .section-content div {
             flex: 1 1 calc(50% - 1rem);
-            background: #ffffff68;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+            background: #c1c1c138;
+            border-radius: 35px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             padding: 1.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .section-content div:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
 
         .section-content div h3 {
@@ -233,7 +234,7 @@
 <body>
     <header>
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; text-align: center;">
-            <img src="profilePic/me.jpeg" alt="Phillip Wisniewski" class="profile-pic">
+            <img src="pics/me.jpeg" alt="Phillip Wisniewski" class="profile-pic">
                 <h1>Phillip Wisniewski</h1>
                     <p data-cy="info">QA Engineer | Hickory, North Carolina</p>
                     <a data-cy="contactMeButton" href="#" onclick="openModal()">Contact Me</a>
