@@ -69,12 +69,13 @@ header a {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 header a:hover {
     background-color: #004da8;
     color: #ffffff;
+    transform: translateY(-5px);
 }
 
 /* .modal is the modal that appears after clicking Contact Me */
@@ -120,9 +121,8 @@ header a:hover {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
     max-width: 150px;
-    
 }
 
 .modal-content .button-container button:hover {
@@ -169,11 +169,13 @@ header a:hover {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    transition: transform 0.3s ease;
 }
 
 #back-to-top:hover {
     background-color: #004da8;
     color: #ffffff;
+    transform: translateY(-5px);
 }
 
 /* .container are the bubbles that display experience info */
@@ -202,10 +204,9 @@ header a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover affect */
 .section-content div:hover {
-    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px);
 }
 
 .section-content div h3 {
